@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pixel Party — Instant Play</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="grain"></div>
+  <header class="topbar">
+    <button class="brand" id="home-button" aria-label="Go home"><span class="brand-mark">P</span><span>Pixel Party</span></button>
+    <nav><button class="nav-link active" data-view="home">Game Room</button><button class="nav-link" data-view="tower-menu">Kingdom</button></nav>
+    <div class="online"><span></span> 3 games ready</div>
+  </header>
+
+  <main>
+    <section id="home" class="view active">
+      <div class="hero">
+        <div><p class="eyebrow">NO LOGIN · NO DOWNLOAD</p><h1>Press play.<br><em>Stay awhile.</em></h1><p class="hero-copy">Tiny games for the moments between everything else. Pick one and jump straight in.</p></div>
+        <div class="hero-orb"><span>✦</span><span>✦</span><span>✦</span></div>
+      </div>
+      <div class="section-heading"><h2>Choose your game</h2><p>One click to start</p></div>
+      <div class="game-grid">
+        <button class="game-card snake-card" data-view="snake"><div class="card-art"><div class="apple">●</div><div class="snake-segments"><i></i><i></i><i></i><i></i></div></div><div class="card-bottom"><span class="game-icon">⌁</span><div><h3>Snack Attack</h3><p>Classic snake, your rules</p></div><b>PLAY <span>→</span></b></div></button>
+        <button class="game-card block-card" data-view="blocks"><div class="card-art block-art"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="card-bottom"><span class="game-icon">▦</span><div><h3>Block Bounce</h3><p>Place, clear, repeat</p></div><b>PLAY <span>→</span></b></div></button>
+        <button class="game-card tower-card" data-view="tower-menu"><div class="card-art castle-art"><div class="moon"></div><div class="castle"><i></i><i></i><i></i></div><div class="hill"></div></div><div class="card-bottom"><span class="game-icon">♜</span><div><h3>Kingdom Keep</h3><p>Defend the realm</p></div><b>PLAY <span>→</span></b></div></button>
+      </div>
+    </section>
+
+    <section id="snake" class="view game-view">
+      <div class="game-header"><button class="back">← All games</button><div><p class="eyebrow">CLASSIC MODE</p><h2>Snack Attack</h2></div><div class="score-pill">SCORE <strong id="snake-score">0</strong></div></div>
+      <div class="game-layout snake-layout"><div class="game-panel"><canvas id="snake-canvas" width="600" height="600"></canvas><div id="snake-overlay" class="game-overlay"><h2>Ready to snack?</h2><p>Use arrow keys or WASD to move.</p><button class="primary" id="snake-start">Start game <span>→</span></button></div></div><aside class="side-card"><h3>Game settings</h3><label>Speed <select id="snake-speed"><option value="180">Chill</option><option value="115" selected>Quick</option><option value="65">Turbo</option></select></label><label>Map size <select id="snake-size"><option value="15">Small</option><option value="20" selected>Medium</option><option value="25">Large</option></select></label><div class="tip"><b>✦ Tiny tip</b><p>Don’t bonk into a wall—or your own tail.</p></div></aside></div>
+    </section>
+
+    <section id="blocks" class="view game-view">
+      <div class="game-header"><button class="back">← All games</button><div><p class="eyebrow">PUZZLE MODE</p><h2>Block Bounce</h2></div><div class="score-pill">SCORE <strong id="block-score">0</strong></div></div>
+      <div class="block-layout"><div class="block-game"><div class="block-board-wrap"><div id="block-board" class="block-board" aria-label="Block board"></div><div id="blocks-overlay" class="game-overlay"><h2>Ready to bounce?</h2><p>Pick a piece, place it, and clear the board.</p><button class="primary" id="blocks-start">Start game <span>→</span></button></div></div><div class="pieces-label">YOUR PIECES</div><div id="pieces" class="pieces"></div><button class="primary new-round" id="blocks-restart">New game <span>↻</span></button></div><aside class="side-card"><h3>How it works</h3><ol><li>Pick one of the three pieces.</li><li>Click a board square to place it.</li><li>Fill a whole row or column to clear it.</li></ol><div class="tip orange"><b>▦ Keep it open</b><p>Every placement matters. Don’t box yourself in!</p></div></aside></div>
+    </section>
+
+    <section id="tower-menu" class="view kingdom-view">
+      <div class="kingdom-hero"><button class="back">← All games</button><p class="eyebrow">THE KINGDOM AWAITS</p><h1>Kingdom <em>Keep</em></h1><p>Build your defense. Keep the goblins out.</p><div class="kingdom-actions"><button class="primary" data-view="tower">Play campaign <span>→</span></button><button class="secondary" data-view="inventory">♜ View armory</button></div></div>
+      <div class="map-preview"><div class="map-mini"><span>♜</span><i></i><i></i><i></i><i></i></div><div><p class="eyebrow">2 MAPS · 3 TOWERS</p><h3>Stonewood &amp; Frostpass</h3><p>A small kingdom needs a sharp mind. Choose your ground, then hold it.</p></div></div>
+    </section>
+
+    <section id="inventory" class="view game-view"><div class="game-header"><button class="back" data-view="tower-menu">← Kingdom</button><div><p class="eyebrow">YOUR COLLECTION</p><h2>The Armory</h2></div></div><div class="inventory-grid"><article><span class="tower-emoji">🏹</span><h3>Archer Tower</h3><p>Fast shots with long range.</p><b>Cost: 50 gold</b></article><article><span class="tower-emoji">🔥</span><h3>Wizard Spire</h3><p>Slow blasts that hit hard.</p><b>Cost: 85 gold</b></article><article><span class="tower-emoji">⚔️</span><h3>Guard Post</h3><p>Rapid, close-range strikes.</p><b>Cost: 65 gold</b></article></div></section>
+
+    <section id="tower" class="view game-view">
+      <div class="game-header"><button class="back" data-view="tower-menu">← Kingdom</button><div><p class="eyebrow">WAVE <span id="wave-num">1</span></p><h2>Stonewood Pass</h2></div><div class="td-stats"><span>♥ <b id="lives">12</b></span><span>◉ <b id="gold">150</b></span></div></div>
+      <div class="tower-layout"><div class="td-panel"><canvas id="tower-canvas" width="760" height="500"></canvas><div id="td-overlay" class="game-overlay"><h2>Defend the keep</h2><p>Choose a tower, then click the grass to build.</p><button class="primary" id="td-start">Begin wave <span>→</span></button></div></div><aside class="tower-select"><h3>Build a tower</h3><button class="tower-choice selected" data-tower="archer"><span>🏹</span><div><b>Archer</b><small>50 gold · fast</small></div></button><button class="tower-choice" data-tower="guard"><span>⚔️</span><div><b>Guard</b><small>65 gold · rapid</small></div></button><button class="tower-choice" data-tower="wizard"><span>🔥</span><div><b>Wizard</b><small>85 gold · splash</small></div></button><div class="tip"><b>✦ Build wisely</b><p>Towers can only be placed on grass, not the path.</p></div></aside></div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
