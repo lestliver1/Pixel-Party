@@ -11,7 +11,7 @@
   <header class="topbar">
     <button class="brand" id="home-button" aria-label="Go home"><span class="brand-mark">P</span><span>Pixel Party</span></button>
     <nav><button class="nav-link active" data-view="home">Game Room</button><button class="nav-link" data-view="tower-menu">Kingdom</button></nav>
-    <div class="online"><span></span> 3 games ready</div>
+    <div class="top-actions"><button class="wallet" data-view="shop">◉ <strong id="coin-count">0</strong></button><div class="online"><span></span> 3 games ready</div></div>
   </header>
 
   <main>
@@ -44,6 +44,8 @@
     </section>
 
     <section id="inventory" class="view game-view"><div class="game-header"><button class="back" data-view="tower-menu">← Kingdom</button><div><p class="eyebrow">YOUR COLLECTION</p><h2>The Armory</h2></div></div><div class="inventory-grid"><article><span class="tower-emoji">🏹</span><h3>Archer Tower</h3><p>Fast shots with long range.</p><b>Cost: 50 gold</b></article><article><span class="tower-emoji">🔥</span><h3>Wizard Spire</h3><p>Slow blasts that hit hard.</p><b>Cost: 85 gold</b></article><article><span class="tower-emoji">⚔️</span><h3>Guard Post</h3><p>Rapid, close-range strikes.</p><b>Cost: 65 gold</b></article></div></section>
+
+    <section id="shop" class="view game-view"><div class="game-header"><button class="back">← Game room</button><div><p class="eyebrow">SPEND YOUR LOOT</p><h2>Pixel Shop</h2></div><div class="score-pill">COINS <strong id="shop-coin-count">0</strong></div></div><div class="shop-card"><div class="shop-icon">✦</div><div class="shop-copy"><p class="eyebrow">ONE-USE POWER-UP</p><h3>Score Boost</h3><p>Double your score in the next game you start. The boost is used automatically when you press play.</p><span class="boost-status" id="boost-status">No boost ready</span></div><button class="primary shop-buy" id="buy-boost">Buy for 25 <span>◉</span></button></div><div class="tip shop-tip"><b>How to earn coins</b><p>Snack Attack: +2 per apple · Block Bounce: +1 per block and +10 per clear · Kingdom Keep: +2 per goblin and +20 per wave.</p></div></section>
 
     <section id="tower" class="view game-view">
       <div class="game-header"><button class="back" data-view="tower-menu">← Kingdom</button><div><p class="eyebrow">WAVE <span id="wave-num">1</span></p><h2>Stonewood Pass</h2></div><div class="td-stats"><span>♥ <b id="lives">12</b></span><span>◉ <b id="gold">150</b></span></div></div>
